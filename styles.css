@@ -6,16 +6,36 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: white;
 }
 
-#wrapper {
-    height: 98vh;
-    width: 100vw;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
+#page {
+    background-color: black;
+    height: 900px;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "settings main"
+    "footer footer";
+    grid-template-rows: 2fr 5fr 1fr;
+    grid-template-columns: 1fr 5fr;
+}
+
+header {
+    grid-area: header;
+    background-color: blue;
+}
+#settings {
+    grid-area: settings;
+    background-color: pink;
+}
+main {
+    grid-area: main;
+    background-color: purple;
 }
 
 #sketch-box {
@@ -26,6 +46,7 @@ body {
     grid-template-columns: repeat(16, 10px);
     grid-template-rows: repeat(16, 10px);
     gap: 0;
+    align-self: center;
 }
 
 .sketch-cell {
@@ -35,3 +56,15 @@ body {
     background-color: red;
 
 }
+
+footer {
+    grid-area: footer;
+    background-color: brown;
+}
+
+h1 {
+    color: white; 
+}
+
+
+
