@@ -12,6 +12,10 @@ densityButton.addEventListener("click", getGridDensity);
 
 function getGridDensity () {
     density = prompt("Please enter a number between 1 & 100.");
+    if (!(density <= 100 && density >= 0) || !(Number.isInteger(density))) {
+        density = 16
+        alert("Invalid entry. Please enter an integer between 1 & 100.")
+    }
     changeGrid(density);
     populateSketchBox(density);
 }
